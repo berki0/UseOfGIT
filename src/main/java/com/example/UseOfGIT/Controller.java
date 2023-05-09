@@ -15,13 +15,12 @@ public class Controller {
     }
 
     @PostMapping
-    public void addNewUser(User user){
-        userService.addNewUser(user);
+    public String addNewUser(User user){
+        return userService.addNewUser(user);
     }
 
-
     @GetMapping
-    public void listAllUser(){
-        userService.returnListOfUsers();
+    public List<User> listAllUser(){
+        return userService.returnListOfUsers();
     }
 }

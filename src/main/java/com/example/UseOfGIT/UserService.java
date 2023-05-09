@@ -2,7 +2,7 @@ package com.example.UseOfGIT;
 
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -16,7 +16,10 @@ public class UserService {
         userRepository.save(user);
         return "your user added";
     }
-    public List<User> returnListOfUsers(){
-        return userRepository.findAll();
+    public Object[] returnListOfUsers(){
+        return userRepository.findAll().toArray();
+    }
+    public Optional<User> returnUserfromID(User user){
+       return userRepository.findById(user.getId());
     }
 }
