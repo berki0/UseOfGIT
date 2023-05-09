@@ -20,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping
-    public List<User> listAllUser(){
+    public Object[] listAllUser(){
         return userService.returnListOfUsers();
     }
 }
